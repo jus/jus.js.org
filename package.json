@@ -1,0 +1,27 @@
+{
+  "name": "jus.js.org",
+  "version": "1.0.0",
+  "description": "The website for jus, the delicous file server for nodey websites.",
+  "main": "index.js",
+  "dependencies": {
+    "jus": "^0.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "jus serve",
+    "dev": "jus serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeke/jus.js.org.git"
+  },
+  "keywords": [
+    "jus"
+  ],
+  "author": "zeke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zeke/jus.js.org/issues"
+  },
+  "homepage": "https://github.com/zeke/jus.js.org#readme"
+}
