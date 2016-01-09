@@ -11,7 +11,7 @@
     "start": "jus serve",
     "dev": "jus serve",
     "build": "jus squeeze . ./dist",
-    "deploy": "git subtree push --prefix dist origin gh-pages"
+    "deploy": "git subtree push --prefix dist origin gh-pages && open https://zeke.github.io/jus.js.org"
   },
   "repository": {
     "type": "git",
