@@ -2,11 +2,8 @@ jus is a zero-configuration server and build tool for making static websites.
 Write pages in Github-flavored Markdown, HTML, and Handlebars.
 Use node-style `require` statements in your scripts and they'll be browserified automatically.
 Write your Javascript in ES6, ES2015, or plain old ES5,
-Write stylesheets in Stylus, Sass, SCSS, or plain old CSS.
+Write stylesheets in Less, Sass, SCSS, Stylus, or plain old CSS.
 Publish to GitHub Pages or surge.sh with ease.
-
-<!-- Inspired by
-tools like [Harp](http://harpjs.com/) and [Jekyll](http://jekyllrb.com/), and [Middleman](https://middlemanapp.com/). -->
 
 ## Getting Started
 
@@ -161,6 +158,14 @@ and pages named index inherit the name of their directory.
   </td>
 </table>
 
+
+## Prior Art
+
+jus was inspired by a number of existing tools:
+
+- [Harp](http://harpjs.com/): Static web server with built in preprocessing
+- [Jekyll](http://jekyllrb.com/): A blog-aware static site generator in Ruby
+- [Brunch](http://brunch.io/): A lightweight approach to building HTML5 applications with emphasis on elegance and simplicity
 
 ## Sites using jus
 
