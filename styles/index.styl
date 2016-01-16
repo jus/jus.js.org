@@ -3,13 +3,20 @@ color-main-darker = #d65252
 color-text = #666
 color-link = #222
 
-fancy-font = 'Roboto Slab'
-
 logo-width = 260px
 nav-width = 30%
 column-max-width = 600px
 
-// util
+// utils / mixins
+
+.fancy-font
+  font-family 'Roboto Slab'
+
+.normal-font
+  font-family 'Source Sans Pro', 'Lucida Grande', sans-serif
+
+.code-font
+  font-family 'Droid Sans Mono', Consolas, "Liberation Mono", Menlo, Monaco, Courier, monospace
 
 .centerer
   display block
@@ -27,7 +34,7 @@ body
   font-size 1.1rem
 
 h1,h2,h3,h4,h5,h6
-  font-family fancy-font
+  @extend .fancy-font
   padding-top 50px
   text-align center
   a
@@ -43,9 +50,34 @@ p,ol,ul
   a
     color color-main
 
+.highlight
+  margin-bottom 16px
+
+code
+  @extend .code-font
+  font-size 1rem
+
+pre
+  margin 0
+  padding 10px
+  word-break normal
+  word-wrap normal
+  overflow auto
+  line-height 1.45
+  border-radius 3px
+  background-color rgba(black, 0.05)
+  pre
+   background none
+  // code
+  //   display block
+  //   margin 0
+  //   padding 8px
+  //   border-radius 2px
+
 // components
 
 nav
+  @extend .fancy-font
   position fixed
   top 0
   right 0
@@ -53,7 +85,6 @@ nav
   height 100%
   background color-main
   color white
-  font-family fancy-font
   font-weight 300
   padding-top 40px
   overflow-y scroll
