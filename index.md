@@ -8,18 +8,15 @@ jus is a development server and build tool for making static websites. Eliminate
 
 ## Getting Started
 
-jus uses some fancy new Javascript language features, so [Node.js](https://nodejs.org/en/download/) version 4 or greater is required.
-
-```sh
-npm i jus --global
-```
-
-Once installed, run the server to watch a directory:
+jus requires [Node.js](https://nodejs.org/en/download/) version 4 or greater. Install the command-line interface globally, then run it to see usage instructions:
 
 ```
-cd my/cool/website
-jus serve
+npm i -g jus && jus
 ```
+
+## Why
+
+Soon...
 
 ## Pages
 
