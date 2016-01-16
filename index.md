@@ -1,9 +1,10 @@
-jus is a zero-configuration server and build tool for making static websites.
-Write pages in Github-flavored Markdown, HTML, and Handlebars.
-Use node-style `require` statements in your scripts and they'll be browserified automatically.
-Write your Javascript in ES6, ES2015, or plain old ES5,
-Write stylesheets in Less, Sass, SCSS, Stylus, or plain old CSS.
-Publish to GitHub Pages or surge.sh with ease.
+jus is a development server and build tool for making static websites. Eliminate boilerplate code, avoid configuration, and focus on building.
+
+- Write [content](/#pages) in Markdown and HTML.
+- Write [scripts](/#scripts) in ES2015, ES6, and ES5.
+- Write [stylesheets](/#stylesheets) in Sass, Less, Stylus, Myth, and CSS.
+- Write [templates](/#templates) in Handlebars.
+- [Publish](/#deployment) to GitHub Pages or Surge.
 
 ## Getting Started
 
