@@ -79,7 +79,7 @@ Templates are written in Handlebars.
 - Pages can specify a custom layout in their [HTML frontmatter](https://www.npmjs.com/package/html-frontmatter). Specifying `layout: foo` will refer to the `/layout-foo.(html|hbs|handlebars|markdown|md)` layout file.
 - Pages can disable layout by setting `layout: false`.
 
-Extensions: `html|hbs|handlebars|markdown|md`
+Extensions: `html|hbs|handlebars|markdown|md|mdown`
 
 ## Context
 
