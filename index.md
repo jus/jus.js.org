@@ -59,9 +59,15 @@ Extensions: `js|jsx|es|es6`
 
 ## Stylesheets
 
-Stylesheets can be written in Sass, SCSS, Stylus, or plain CSS
+Stylesheets can be written in
+[Sass](http://sass-lang.com/),
+[SCSS](http://sass-lang.com/),
+[Less](http://lesscss.org/),
+[Stylus](http://stylus-lang.com/),
+[Myth](http://www.myth.io/),
+or plain old CSS. Use whatever preprocessor suits your fancy.
 
-Extensions: `css|sass|scss|styl`
+Extensions: `css|less|sass|scss|styl`
 
 ## Templates
 
