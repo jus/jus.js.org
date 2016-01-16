@@ -31,8 +31,29 @@ Extensions: `html|hbs|handlebars|markdown|md`
 
 ## Scripts
 
-Scripts can be written in ES5, ES6, and ES2015. They are [browserified](https://github.com/substack/browserify-handbook#readme) with [babelify](https://www.npmjs.com/package/babelify) using the `es2015` and `react` presets, which
-means you can `require` or `import` node modules in them!
+Scripts are automatically [browserified](https://github.com/substack/browserify-handbook#readme) and [babelified](https://www.npmjs.com/package/babelify) using the `es2015` and `react` presets.
+
+Use node-style `require` statements to include npm modules in your code:
+
+```js
+const $ = require('jquery')
+
+$() => {
+  console.log(`welcome to ${location.hostname}`)
+}
+```
+
+You can also use [ES6-style imports](http://babeljs.io/docs/learn-es2015/#modules), if you prefer:
+
+```js
+import React from 'react'
+import ReactDOM from 'react-dom'
+import domready from 'domready'
+
+domready(() => {
+  // do some React magic
+})
+```
 
 Extensions: `js|jsx|es|es6`
 
