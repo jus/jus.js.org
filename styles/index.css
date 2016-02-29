@@ -29,6 +29,7 @@ body {
   line-height: 1.5;
   color: #666;
   font-size: 1.1rem;
+  transition: all 0.3s;
 }
 h1,
 h2,
@@ -77,6 +78,12 @@ pre {
 pre pre {
   background: none;
 }
+p code {
+  background: #f4f4f4;
+  padding: 3px 5px;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
 nav {
   position: fixed;
   top: 0;
@@ -105,10 +112,42 @@ nav a.active {
   opacity: 1;
   background: #d65252;
 }
+@media screen and (max-width: 600px) {
+  nav {
+    display: none;
+  }
+}
+#github-repo-link {
+  z-index: 10;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 30px;
+  height: 30px;
+  opacity: 0.4;
+  transition: all 0.3s;
+}
+#github-repo-link img {
+  width: 100%;
+}
+#github-repo-link:hover {
+  opacity: 1;
+}
+@media screen and (max-width: 600px) {
+  #github-repo-link {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 #content {
   width: 70%;
   padding: 60px;
   position: relative;
+}
+@media screen and (max-width: 600px) {
+  #content {
+    width: 100%;
+  }
 }
 #column {
   position: relative;
