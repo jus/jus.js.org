@@ -12,33 +12,37 @@
   <body>
 
     <nav>
+      <a href="/#why">Why?</a>
       <a href="/#getting-started">Getting Started</a>
       <a href="/#pages">Pages</a>
       <a href="/#scripts">Scripts</a>
       <a href="/#stylesheets">Stylesheets</a>
-      <a href="/#templates">Templates</a>
-      <a href="/#datafiles">Datafiles</a>
-      <a href="/#images">Images</a>
       <a href="/#context">Context</a>
       <a href="/#frontmatter">Frontmatter</a>
+      <a href="/#templates">Templates</a>
+      <a href="/#images">Images</a>
+      <a href="/#datafiles">Datafiles</a>
       <a href="/#clean-urls">Clean URLs</a>
-      <a href="/#squeezing">Squeezing</a>
-      <a href="/#deploying">Deploying</a>
+      <a href="/#deployment-to-github-pages">Deployment</a>
     </nav>
+
+    <a href="https://github.com/zeke/jus" id="github-repo-link">
+      <img src="logos/github-octocat.svg">
+    </a>
 
     <div id="content">
 
       <div id="column">
         <div class="centerer">
           <a id="logo" href="/">
-            <img src="logo.svg">
+            <img src="logos/jus.svg">
           </a>
         </div>
 
         <p>jus is a development server and build tool for making static websites with no configuration and no boilerplate code. It has built-in support for browserify, ES6, ES2015, React JSX, GitHub Flavored markdown, Sass, Less, Stylus, Myth, Handlebars and more.</p>
 <h2 id="why" class="deep-link"><a href="#why">Why?</a></h2>
-<p>The year is 2016 and you&apos;re building a new website. At first you just create a single <code>index.html</code> file with some inline <code>&lt;script&gt;</code> and <code>&lt;style&gt;</code> tags. This works for a bit, but soon your code grows and you decide to extract the styles and scripts into standalone files. This is slightly better, but eventually you want to do something more sophisticated, like writing your stylesheets in Sass, or concatenating and minifying assets, or using npm dependencies with <a href="https://github.com/substack/browserify-handbook">browserify</a>. These conveniences are essential to building a website of any magnitude, but setting them up is tedious and time-consuming. It&apos;s at this point in the project that your attention turns from the creative to the mundane. Rather than building, you&apos;re now configuring.</p>
-<p>In this day and age, most developers would turn to <a href="http://gulpjs.com/">Gulp</a>, <a href="http://substack.net/task_automation_with_npm_run">npm scripts</a>, <a href="https://www.staticgen.com/jekyll">Jekyll</a> or one of <a href="https://www.staticgen.com">dozens of static site tools</a>. This is where <code>jus</code> comes in as an alternative.</p>
+<p>The year is 2016 and you&apos;re building a new website. At first you just create a single HTML file with some inline scripts and style tags. This works for a bit, but soon your code grows and you decide to extract the styles and scripts into standalone files. This is slightly better, but eventually you want to do something more sophisticated, like writing your stylesheets in Sass, or concatenating and minifying assets, or using npm dependencies with <a href="https://github.com/substack/browserify-handbook">browserify</a>. These conveniences are essential to building a website of any magnitude, but setting them up is tedious and time-consuming. It&apos;s at this point in the project that your attention turns from the creative to the mundane. Rather than building, you&apos;re now configuring.</p>
+<p>In this day and age, most developers would turn to <a href="http://gulpjs.com/">Gulp</a>, <a href="http://substack.net/task_automation_with_npm_run">npm scripts</a>, <a href="https://www.staticgen.com/jekyll">Jekyll</a> or one of <a href="https://www.staticgen.com">dozens of static site tools</a>. This is where jus comes in as an alternative.</p>
 <p>There is no setup with jus. It has just two commands: <code>serve</code> and <code>build</code>. Run <code>jus serve</code> in your project directory and you&apos;ve got a live develpment server running, watching for file changes, and serving your content with <a href="#clean-urls">clean URLs</a>. Write a <code>foo.sass</code> file and it&apos;ll be served at <code>/foo.css</code>. Use an npm-style <code>require</code> statement in your script, and jus will serve it up a browserified bundle. Write React&apos;s JSX syntax and it&apos;ll be transpiled to javascript on the fly. Write a GitHub-flavored <code>/markdown/file.md</code> and it&apos;ll be served as syntax-highlighted HTML at <code>/markdown/file</code>.</p>
 <p>When it&apos;s time to deploy, run <code>jus build</code> to compile your site down into plain old HTML, CSS, and Javascript files, ready to deployed to <a href="#deployment-to-github-pages">GitHub Pages</a> or <a href="#deployment-to-surge">Surge</a>.</p>
 <h2 id="getting-started" class="deep-link"><a href="#getting-started">Getting Started</a></h2>
@@ -48,7 +52,7 @@
 on <a href="https://addyosmani.com/blog/using-npm-offline/">how to make npm faster</a>.</p>
 <p>If you like to learn by example, check out the repos of <a href="#sites-using-jus">sites using jus</a>. Otherwise, read on...</p>
 <h2 id="pages" class="deep-link"><a href="#pages">Pages</a></h2>
-<p>Pages are written in Markdown, HTML, Handlebars, or any combination thereof. At render time each page is passed a Handlebars context object containing metadata about all the files in the directory.</p>
+<p>Pages are written in Markdown, HTML, Handlebars, or any combination thereof. At render time each page is passed a <a href="#context">Handlebars context object</a> containing metadata about all the files in the directory.</p>
 <ul>
 <li>Markdown parsing with <a href="npm.im/marky-markdown">marky-markdown</a></li>
 <li>GitHub-flavored Markdown support, including <a href="https://help.github.com/articles/creating-and-highlighting-code-blocks/">fenced code blocks</a></li>
@@ -76,16 +80,6 @@ can write JSX in your scripts.</p>
 <a href="http://www.myth.io/">Myth</a>,
 or plain old CSS. Use whatever preprocessor suits your fancy.</p>
 <p>Extensions: <code>css|less|sass|scss|styl</code></p>
-<h2 id="templates" class="deep-link"><a href="#templates">Templates</a></h2>
-<p>Templates are written in Handlebars.</p>
-<ul>
-<li>They must include a <code></code> string, to be used as a placeholder for where the main content should be rendered.</li>
-<li>They must have the word <code>layout</code> in their filename.</li>
-<li>If a file named <code>/layout.(html|hbs|handlebars|markdown|md)</code> is present, it will be applied to all pages by default.</li>
-<li>Pages can specify a custom layout in their <a href="https://www.npmjs.com/package/html-frontmatter">HTML frontmatter</a>. Specifying <code>layout: foo</code> will refer to the <code>/layout-foo.(html|hbs|handlebars|markdown|md)</code> layout file.</li>
-<li>Pages can disable layout by setting <code>layout: false</code>.</li>
-</ul>
-<p>Extensions: <code>html|hbs|handlebars|markdown|md|mdown</code></p>
 <h2 id="context" class="deep-link"><a href="#context">Context</a></h2>
 <p>When the jus server is initialized, it recursively finds all the files in the directory tree,
 ignoring <code>node_modules</code>, <code>.git</code>, and other unwanted patterns. These files are then stored in
@@ -98,8 +92,23 @@ every file in the site at render time. You can use this to output to build a sit
 <p>Pages always have the following properties:</p>
 <pre><code class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;title</span><span class="keyword operator js"><span>:</span></span><span>&#xA0;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&apos;</span></span><span class="punctuation definition string end js"><span>&apos;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;href</span><span class="keyword operator js"><span>:</span></span><span>&#xA0;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&apos;</span></span><span class="punctuation definition string end js"><span>&apos;</span></span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span></span></div></pre></code></pre>
 <p>Using handlebars in your pages is entirely optional. If your pages don&apos;t need to do any dynamic rendering at build time, that&apos;s okay. The context will simply be ignored at render time.</p>
+<h2 id="frontmatter" class="deep-link"><a href="#frontmatter">Frontmatter</a></h2>
+<p>Much like Jekyll, jus supports <a href="https://github.com/zeke/html-frontmatter#readme">HTML frontmatter</a>. This allows you to add key-value metadata to your pages:</p>
+<pre><code class="highlight html"><pre class="editor editor-colors"><div class="line"><span class="text html basic"><span class="comment block html"><span class="punctuation definition comment html"><span>&lt;!--</span></span></span></span></div><div class="line"><span class="text html basic"><span class="comment block html"><span>title:&#xA0;Alice&#xA0;in&#xA0;Wonderland</span></span></span></div><div class="line"><span class="text html basic"><span class="comment block html"><span>year:&#xA0;1951</span></span></span></div><div class="line"><span class="text html basic"><span class="comment block html"><span class="punctuation definition comment html"><span>--&gt;</span></span></span></span></div></pre></code></pre>
+<p>Any such values present in an HTML comment at the top of a page are made available in that page&apos;s <a href="#context">Handlebars context object</a> at render time.</p>
+<p>Note: Jekyll uses YAML for frontmatter, but jus uses HTML, because it can be included in a file without adversely affecting the way it renders on github.com.</p>
+<h2 id="templates" class="deep-link"><a href="#templates">Templates</a></h2>
+<p>Handlebars templates can be used to wrap layouts around your pages.</p>
+<ul>
+<li>If a file named <code>/layout.(html|hbs|handlebars|markdown|md)</code> is present, it will be applied to all pages by default.</li>
+<li>Templates must include a <code></code> string, to be used as a placeholder for where the main content should be rendered.</li>
+<li>Templates must have the word <code>layout</code> in their filename.</li>
+<li>Pages can specify a custom layout in their <a href="#frontmatter">frontmatter</a>. Specifying <code>layout: foo</code> will refer to the <code>/layout-foo.(html|hbs|handlebars|markdown|md)</code> layout file.</li>
+<li>Pages can disable layout by setting <code>layout: false</code> in their frontmatter.</li>
+</ul>
+<p>Extensions: <code>html|hbs|handlebars|markdown|md|mdown</code></p>
 <h3 id="images" class="deep-link"><a href="#images">Images</a></h3>
-<p>Delicious metadata is extracted from images and included in the Handlebars context object, which is accessible to every page.</p>
+<p>Delicious metadata is extracted from images and included in the <a href="#context">Handlebars context object</a>, which is accessible to every page.</p>
 <ul>
 <li>Extracts <a href="https://en.wikipedia.org/wiki/Exchangeable_image_file_format">EXIF data</a> from JPEGs, including <a href="https://en.wikipedia.org/wiki/Exchangeable_image_file_format#Geolocation">geolocation  data</a>.</li>
 <li>Extracts <a href="https://www.npmjs.com/package/image-size">dimensions</a></li>
@@ -107,15 +116,15 @@ every file in the site at render time. You can use this to output to build a sit
 </ul>
 <p>Extensions: <code>png|jpg|gif|svg</code></p>
 <h2 id="datafiles" class="deep-link"><a href="#datafiles">Datafiles</a></h2>
-<p>JSON and YML files are slurped into the Handlebars context object, which is accessible to every page.</p>
+<p>JSON and YML files are slurped into the <a href="#context">Handlebars context object</a>, which is accessible to every page.</p>
 <p>Extensions: <code>json|yaml|yml</code></p>
 <h2 id="clean-urls" class="deep-link"><a href="#clean-urls">Clean URLs</a></h2>
 <p>jus uses a clean URL strategy that is compatible with
 <a href="http://aseemk.github.io/gh-pages-test/">GitHub Pages</a>
 and
 <a href="https://surge.sh/help/using-clean-urls-automatically">surge.sh</a>.
-In essence, <a href="#pages">Pages</a> get their extension lopped off,
-and pages named index inherit the name of their directory.</p>
+In essence, <a href="#pages">pages</a> get their extension lopped off,
+and pages named <code>index</code> inherit the name of their directory.</p>
 <table class="routes">
   <tr>
     <th>Filename</th>
