@@ -2,7 +2,7 @@ jus is a development server and build tool for making static websites with no co
 
 ## Why?
 
-The year is 2016 and you're building a new website. At first you just create a single `index.html` file with some inline `<script>` and `<style>` tags. This works for a bit, but soon your code grows and you decide to extract the styles and scripts into standalone files. This is slightly better, but eventually you want to do something more sophisticated, like writing your stylesheets in Sass, or concatenating and minifying assets, or using npm dependencies with [browserify](https://github.com/substack/browserify-handbook). These conveniences are essential to building a website of any magnitude, but setting them up is tedious and time-consuming. It's at this point in the project that your attention turns from the creative to the mundane. Rather than building, you're now configuring.
+The year is 2016 and you're building a new website. At first you just create a single `index.html` file with some inline scripts and style tags. This works for a bit, but soon your code grows and you decide to extract the styles and scripts into standalone files. This is slightly better, but eventually you want to do something more sophisticated, like writing your stylesheets in Sass, or concatenating and minifying assets, or using npm dependencies with [browserify](https://github.com/substack/browserify-handbook). These conveniences are essential to building a website of any magnitude, but setting them up is tedious and time-consuming. It's at this point in the project that your attention turns from the creative to the mundane. Rather than building, you're now configuring.
 
 In this day and age, most developers would turn to [Gulp](http://gulpjs.com/), [npm scripts](http://substack.net/task_automation_with_npm_run), [Jekyll](https://www.staticgen.com/jekyll) or one of [dozens of static site tools](https://www.staticgen.com). This is where `jus` comes in as an alternative.
 
@@ -35,6 +35,21 @@ Pages are written in Markdown, HTML, Handlebars, or any combination thereof. At 
 - Extracts [HTML Frontmatter](https://www.npmjs.com/package/html-frontmatter) as metadata
 
 Extensions: `html|hbs|handlebars|markdown|md`
+
+## Frontmatter
+
+Much like Jekyll, jus supports [HTML frontmatter](https://github.com/zeke/html-frontmatter#readme). This allows you to add key-value metadata to your pages:
+
+```html
+<!--
+title: Alice in Wonderland
+year: 1951
+-->
+```
+
+Any such values present in an HTML comment at the top of a page are made available in that page's [Handlebars context object](#context) at render time.
+
+Note: Jekyll uses YAML for frontmatter, but jus uses HTML, because it can be included in a file without adversely affecting the way it renders on github.com.
 
 ## Scripts
 
@@ -81,13 +96,13 @@ Extensions: `css|less|sass|scss|styl`
 
 ## Templates
 
-Templates are written in Handlebars.
+Handlebars templates can be used to wrap layouts around your pages.
 
-- They must include a `{{{body}}}` string, to be used as a placeholder for where the main content should be rendered.
-- They must have the word `layout` in their filename.
 - If a file named `/layout.(html|hbs|handlebars|markdown|md)` is present, it will be applied to all pages by default.
-- Pages can specify a custom layout in their [HTML frontmatter](https://www.npmjs.com/package/html-frontmatter). Specifying `layout: foo` will refer to the `/layout-foo.(html|hbs|handlebars|markdown|md)` layout file.
-- Pages can disable layout by setting `layout: false`.
+- Templates must include a `{{{body}}}` string, to be used as a placeholder for where the main content should be rendered.
+- Templates must have the word `layout` in their filename.
+- Pages can specify a custom layout in their [frontmatter](#frontmatter). Specifying `layout: foo` will refer to the `/layout-foo.(html|hbs|handlebars|markdown|md)` layout file.
+- Pages can disable layout by setting `layout: false` in their frontmatter.
 
 Extensions: `html|hbs|handlebars|markdown|md|mdown`
 
