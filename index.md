@@ -2,9 +2,9 @@ jus is a development server and build tool for making static websites with no co
 
 ## Why?
 
-The year is 2016 and you're building a new website. At first you just create a single `index.html` file with some inline scripts and style tags. This works for a bit, but soon your code grows and you decide to extract the styles and scripts into standalone files. This is slightly better, but eventually you want to do something more sophisticated, like writing your stylesheets in Sass, or concatenating and minifying assets, or using npm dependencies with [browserify](https://github.com/substack/browserify-handbook). These conveniences are essential to building a website of any magnitude, but setting them up is tedious and time-consuming. It's at this point in the project that your attention turns from the creative to the mundane. Rather than building, you're now configuring.
+The year is 2016 and you're building a new website. At first you just create a single HTML file with some inline scripts and style tags. This works for a bit, but soon your code grows and you decide to extract the styles and scripts into standalone files. This is slightly better, but eventually you want to do something more sophisticated, like writing your stylesheets in Sass, or concatenating and minifying assets, or using npm dependencies with [browserify](https://github.com/substack/browserify-handbook). These conveniences are essential to building a website of any magnitude, but setting them up is tedious and time-consuming. It's at this point in the project that your attention turns from the creative to the mundane. Rather than building, you're now configuring.
 
-In this day and age, most developers would turn to [Gulp](http://gulpjs.com/), [npm scripts](http://substack.net/task_automation_with_npm_run), [Jekyll](https://www.staticgen.com/jekyll) or one of [dozens of static site tools](https://www.staticgen.com). This is where `jus` comes in as an alternative.
+In this day and age, most developers would turn to [Gulp](http://gulpjs.com/), [npm scripts](http://substack.net/task_automation_with_npm_run), [Jekyll](https://www.staticgen.com/jekyll) or one of [dozens of static site tools](https://www.staticgen.com). This is where jus comes in as an alternative.
 
 There is no setup with jus. It has just two commands: `serve` and `build`. Run `jus serve` in your project directory and you've got a live develpment server running, watching for file changes, and serving your content with [clean URLs](#clean-urls). Write a `foo.sass` file and it'll be served at `/foo.css`. Use an npm-style `require` statement in your script, and jus will serve it up a browserified bundle. Write React's JSX syntax and it'll be transpiled to javascript on the fly. Write a GitHub-flavored `/markdown/file.md` and it'll be served as syntax-highlighted HTML at `/markdown/file`.
 
@@ -25,7 +25,7 @@ If you like to learn by example, check out the repos of [sites using jus](#sites
 
 ## Pages
 
-Pages are written in Markdown, HTML, Handlebars, or any combination thereof. At render time each page is passed a handlebars context object containing metadata about all the files in the directory.
+Pages are written in Markdown, HTML, Handlebars, or any combination thereof. At render time each page is passed a [Handlebars context object](#context) containing metadata about all the files in the directory.
 
 - Markdown parsing with [marky-markdown](npm.im/marky-markdown)
 - GitHub-flavored Markdown support, including [fenced code blocks](https://help.github.com/articles/creating-and-highlighting-code-blocks/)
@@ -35,21 +35,6 @@ Pages are written in Markdown, HTML, Handlebars, or any combination thereof. At 
 - Extracts [HTML Frontmatter](https://www.npmjs.com/package/html-frontmatter) as metadata
 
 Extensions: `html|hbs|handlebars|markdown|md`
-
-## Frontmatter
-
-Much like Jekyll, jus supports [HTML frontmatter](https://github.com/zeke/html-frontmatter#readme). This allows you to add key-value metadata to your pages:
-
-```html
-<!--
-title: Alice in Wonderland
-year: 1951
--->
-```
-
-Any such values present in an HTML comment at the top of a page are made available in that page's [Handlebars context object](#context) at render time.
-
-Note: Jekyll uses YAML for frontmatter, but jus uses HTML, because it can be included in a file without adversely affecting the way it renders on github.com.
 
 ## Scripts
 
@@ -94,18 +79,6 @@ or plain old CSS. Use whatever preprocessor suits your fancy.
 
 Extensions: `css|less|sass|scss|styl`
 
-## Templates
-
-Handlebars templates can be used to wrap layouts around your pages.
-
-- If a file named `/layout.(html|hbs|handlebars|markdown|md)` is present, it will be applied to all pages by default.
-- Templates must include a `{{{body}}}` string, to be used as a placeholder for where the main content should be rendered.
-- Templates must have the word `layout` in their filename.
-- Pages can specify a custom layout in their [frontmatter](#frontmatter). Specifying `layout: foo` will refer to the `/layout-foo.(html|hbs|handlebars|markdown|md)` layout file.
-- Pages can disable layout by setting `layout: false` in their frontmatter.
-
-Extensions: `html|hbs|handlebars|markdown|md|mdown`
-
 ## Context
 
 When the jus server is initialized, it recursively finds all the files in the directory tree,
@@ -139,9 +112,36 @@ Pages always have the following properties:
 
 Using handlebars in your pages is entirely optional. If your pages don't need to do any dynamic rendering at build time, that's okay. The context will simply be ignored at render time.
 
+## Frontmatter
+
+Much like Jekyll, jus supports [HTML frontmatter](https://github.com/zeke/html-frontmatter#readme). This allows you to add key-value metadata to your pages:
+
+```html
+<!--
+title: Alice in Wonderland
+year: 1951
+-->
+```
+
+Any such values present in an HTML comment at the top of a page are made available in that page's [Handlebars context object](#context) at render time.
+
+Note: Jekyll uses YAML for frontmatter, but jus uses HTML, because it can be included in a file without adversely affecting the way it renders on github.com.
+
+## Templates
+
+Handlebars templates can be used to wrap layouts around your pages.
+
+- If a file named `/layout.(html|hbs|handlebars|markdown|md)` is present, it will be applied to all pages by default.
+- Templates must include a `{{{body}}}` string, to be used as a placeholder for where the main content should be rendered.
+- Templates must have the word `layout` in their filename.
+- Pages can specify a custom layout in their [frontmatter](#frontmatter). Specifying `layout: foo` will refer to the `/layout-foo.(html|hbs|handlebars|markdown|md)` layout file.
+- Pages can disable layout by setting `layout: false` in their frontmatter.
+
+Extensions: `html|hbs|handlebars|markdown|md|mdown`
+
 ### Images
 
-Delicious metadata is extracted from images and included in the handlebars context object, which is accessible to every page.
+Delicious metadata is extracted from images and included in the [Handlebars context object](#context), which is accessible to every page.
 
 - Extracts [EXIF data](https://en.wikipedia.org/wiki/Exchangeable_image_file_format) from JPEGs, including [geolocation  data](https://en.wikipedia.org/wiki/Exchangeable_image_file_format#Geolocation).
 - Extracts [dimensions](https://www.npmjs.com/package/image-size)
@@ -151,7 +151,7 @@ Extensions: `png|jpg|gif|svg`
 
 ## Datafiles
 
-JSON and YML files are slurped into the handlebars context object, which is accessible to every page.
+JSON and YML files are slurped into the [Handlebars context object](#context), which is accessible to every page.
 
 Extensions: `json|yaml|yml`
 
@@ -161,8 +161,8 @@ jus uses a clean URL strategy that is compatible with
 [GitHub Pages](http://aseemk.github.io/gh-pages-test/)
 and
 [surge.sh](https://surge.sh/help/using-clean-urls-automatically).
-In essence, [Pages](#pages) get their extension lopped off,
-and pages named index inherit the name of their directory.
+In essence, [pages](#pages) get their extension lopped off,
+and pages named `index` inherit the name of their directory.
 
 <table class="routes">
   <tr>

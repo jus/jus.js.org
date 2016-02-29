@@ -48,7 +48,7 @@
 on <a href="https://addyosmani.com/blog/using-npm-offline/">how to make npm faster</a>.</p>
 <p>If you like to learn by example, check out the repos of <a href="#sites-using-jus">sites using jus</a>. Otherwise, read on...</p>
 <h2 id="pages" class="deep-link"><a href="#pages">Pages</a></h2>
-<p>Pages are written in Markdown, HTML, Handlebars, or any combination thereof. At render time each page is passed a handlebars context object containing metadata about all the files in the directory.</p>
+<p>Pages are written in Markdown, HTML, Handlebars, or any combination thereof. At render time each page is passed a Handlebars context object containing metadata about all the files in the directory.</p>
 <ul>
 <li>Markdown parsing with <a href="npm.im/marky-markdown">marky-markdown</a></li>
 <li>GitHub-flavored Markdown support, including <a href="https://help.github.com/articles/creating-and-highlighting-code-blocks/">fenced code blocks</a></li>
@@ -99,7 +99,7 @@ every file in the site at render time. You can use this to output to build a sit
 <pre><code class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;title</span><span class="keyword operator js"><span>:</span></span><span>&#xA0;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&apos;</span></span><span class="punctuation definition string end js"><span>&apos;</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&#xA0;&#xA0;href</span><span class="keyword operator js"><span>:</span></span><span>&#xA0;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>&apos;</span></span><span class="punctuation definition string end js"><span>&apos;</span></span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span></span></div></pre></code></pre>
 <p>Using handlebars in your pages is entirely optional. If your pages don&apos;t need to do any dynamic rendering at build time, that&apos;s okay. The context will simply be ignored at render time.</p>
 <h3 id="images" class="deep-link"><a href="#images">Images</a></h3>
-<p>Delicious metadata is extracted from images and included in the handlebars context object, which is accessible to every page.</p>
+<p>Delicious metadata is extracted from images and included in the Handlebars context object, which is accessible to every page.</p>
 <ul>
 <li>Extracts <a href="https://en.wikipedia.org/wiki/Exchangeable_image_file_format">EXIF data</a> from JPEGs, including <a href="https://en.wikipedia.org/wiki/Exchangeable_image_file_format#Geolocation">geolocation  data</a>.</li>
 <li>Extracts <a href="https://www.npmjs.com/package/image-size">dimensions</a></li>
@@ -107,7 +107,7 @@ every file in the site at render time. You can use this to output to build a sit
 </ul>
 <p>Extensions: <code>png|jpg|gif|svg</code></p>
 <h2 id="datafiles" class="deep-link"><a href="#datafiles">Datafiles</a></h2>
-<p>JSON and YML files are slurped into the handlebars context object, which is accessible to every page.</p>
+<p>JSON and YML files are slurped into the Handlebars context object, which is accessible to every page.</p>
 <p>Extensions: <code>json|yaml|yml</code></p>
 <h2 id="clean-urls" class="deep-link"><a href="#clean-urls">Clean URLs</a></h2>
 <p>jus uses a clean URL strategy that is compatible with
