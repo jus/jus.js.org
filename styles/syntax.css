@@ -1,0 +1,209 @@
+pre > code,
+.highlight {
+  background-color: #F5F5F5;
+  color: #555;
+}
+pre > code .invisible-character,
+.highlight .invisible-character {
+  color: rgba(85, 85, 85, 0.2);
+}
+pre > code .indent-guide,
+.highlight .indent-guide {
+  color: rgba(85, 85, 85, 0.2);
+}
+pre > code .wrap-guide,
+.highlight .wrap-guide {
+  background-color: rgba(85, 85, 85, 0.2);
+}
+pre > code .gutter,
+.highlight .gutter {
+  color: #555;
+  background: white;
+}
+pre > code .gutter .line-number.folded,
+.highlight .gutter .line-number.folded,
+pre > code .gutter .line-number:after,
+.highlight .gutter .line-number:after,
+pre > code .fold-marker:after,
+.highlight .fold-marker:after {
+  color: #e87b00;
+}
+pre > code .invisible,
+.highlight .invisible {
+  color: #555;
+}
+pre > code .selection .region,
+.highlight .selection .region {
+  background-color: #e1e1e1;
+}
+pre > code.is-focused .cursor,
+.highlight.is-focused .cursor {
+  border-color: black;
+}
+pre > code.is-focused .selection .region,
+.highlight.is-focused .selection .region {
+  background-color: #afc4da;
+}
+pre > code.is-focused .line-number.cursor-line-no-selection,
+.highlight.is-focused .line-number.cursor-line-no-selection,
+pre > code.is-focused .line.cursor-line,
+.highlight.is-focused .line.cursor-line {
+  background-color: rgba(255, 255, 134, 0.34);
+}
+pre > code .source.gfm,
+.highlight .source.gfm {
+  color: #444;
+}
+pre > code .gfm .markup.heading,
+.highlight .gfm .markup.heading {
+  color: #111;
+}
+pre > code .gfm .link,
+.highlight .gfm .link {
+  color: #888;
+}
+pre > code .gfm .variable.list,
+.highlight .gfm .variable.list {
+  color: #888;
+}
+pre > code .markdown .paragraph,
+.highlight .markdown .paragraph {
+  color: #444;
+}
+pre > code .markdown .heading,
+.highlight .markdown .heading {
+  color: #111;
+}
+pre > code .markdown .link,
+.highlight .markdown .link {
+  color: #888;
+}
+pre > code .markdown .link .string,
+.highlight .markdown .link .string {
+  color: #888;
+}
+:host(.is-focused) .cursor {
+  border-color: black;
+}
+:host(.is-focused) .selection .region {
+  background-color: #afc4da;
+}
+:host(.is-focused) .line-number.cursor-line-no-selection,
+:host(.is-focused) .line.cursor-line {
+  background-color: rgba(255, 255, 134, 0.34);
+}
+.comment {
+  color: #999988;
+  font-style: italic;
+}
+.string {
+  color: #D14;
+}
+.string .source,
+.string .meta.embedded.line {
+  color: #5A5A5A;
+}
+.string .punctuation.section.embedded {
+  color: #920B2D;
+}
+.string .punctuation.section.embedded .source {
+  color: #920B2D;
+}
+.constant.numeric {
+  color: #D14;
+}
+.constant.language {
+  color: #606aa1;
+}
+.constant.character,
+.constant.other {
+  color: #606aa1;
+}
+.constant.symbol {
+  color: #990073;
+}
+.constant.numeric.line-number.find-in-files .match {
+  color: rgba(143, 190, 0, 0.63);
+}
+.variable {
+  color: #008080;
+}
+.variable.parameter {
+  color: #606aa1;
+}
+.keyword {
+  color: #222;
+  font-weight: bold;
+}
+.keyword.unit {
+  color: #445588;
+}
+.keyword.special-method {
+  color: #0086B3;
+}
+.storage {
+  color: #222;
+}
+.storage.type {
+  color: #222;
+}
+.entity.name.class {
+  text-decoration: underline;
+  color: #606aa1;
+}
+.entity.other.inherited-class {
+  text-decoration: underline;
+  color: #606aa1;
+}
+.entity.name.function {
+  color: #900;
+}
+.entity.name.tag {
+  color: #008080;
+}
+.entity.other.attribute-name {
+  color: #458;
+  font-weight: bold;
+}
+.entity.name.filename.find-in-files {
+  color: #E6DB74;
+}
+.support.constant,
+.support.function,
+.support.type {
+  color: #458;
+}
+.support.class {
+  color: #008080;
+}
+.invalid {
+  color: #F8F8F0;
+  background-color: #00A8C6;
+}
+.invalid.deprecated {
+  color: #F8F8F0;
+  background-color: #8FBE00;
+}
+.meta.structure.dictionary.json > .string.quoted.double.json,
+.meta.structure.dictionary.json > .string.quoted.double.json .punctuation.string {
+  color: #000080;
+}
+.meta.structure.dictionary.value.json > .string.quoted.double.json {
+  color: #d14;
+}
+.meta.diff,
+.meta.diff.header {
+  color: #75715E;
+}
+.css.support.property-name {
+  font-weight: bold;
+  color: #333;
+}
+.css.constant {
+  color: #099;
+}
+.bracket-matcher .region {
+  background-color: #C9C9C9;
+  opacity: .7;
+  border-bottom: 0 none;
+}

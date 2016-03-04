@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "The website for jus, the delicous file server for nodey websites.",
   "main": "index.js",
-  "dependencies": {
-    "jus": "^0.9.0"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "scripts": {
     "start": "jus serve",

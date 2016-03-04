@@ -30,6 +30,8 @@ body {
   color: #666;
   font-size: 1.1rem;
   transition: all 0.3s;
+  margin: 0;
+  padding: 0;
 }
 h1,
 h2,
