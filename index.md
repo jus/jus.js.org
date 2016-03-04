@@ -1,4 +1,4 @@
-jus is a development server and build tool for making static websites with no configuration and no boilerplate code. It has built-in support for browserify, ES6, ES2015, React JSX, GitHub Flavored markdown, Sass, Less, Stylus, Myth, Handlebars and more.
+jus is a development server and build tool for making static websites with no configuration and no boilerplate code. It has built-in support for [browserify](https://github.com/substack/browserify-handbook#readme), ES6 and ES2015 with [Babel](http://babeljs.io/), [React JSX](http://babeljs.io/docs/plugins/preset-react/), GitHub Flavored markdown, syntax highlighting, [Sass](http://sass-lang.com/), [Less](http://lesscss.org/), [Stylus](http://stylus-lang.com/), [Myth](http://www.myth.io/), [Handlebars](http://handlebarsjs.com/), [browsersync](https://browsersync.io/) and more.
 
 ## Why?
 
@@ -6,7 +6,7 @@ The year is 2016 and you're building a new website. At first you just create a s
 
 In this day and age, most developers would turn to [Gulp](http://gulpjs.com/), [npm scripts](http://substack.net/task_automation_with_npm_run), [Jekyll](https://www.staticgen.com/jekyll) or one of [dozens of static site tools](https://www.staticgen.com). This is where jus comes in as an alternative.
 
-There is no setup with jus. It has just two commands: `serve` and `build`. Run `jus serve` in your project directory and you've got a live develpment server running, watching for file changes, and serving your content with [clean URLs](#clean-urls). Write a `foo.sass` file and it'll be served at `/foo.css`. Use an npm-style `require` statement in your script, and jus will serve it up a browserified bundle. Write React's JSX syntax and it'll be transpiled to javascript on the fly. Write a GitHub-flavored `/markdown/file.md` and it'll be served as syntax-highlighted HTML at `/markdown/file`.
+There is no setup with jus. It has just two commands: `serve` and `build`. Run `jus serve` in your project directory and you've got a live develpment server running, watching for file changes, autorefreshing your browser with [browsersync](https://browsersync.io/), and serving your content with [clean URLs](#clean-urls). Write a `foo.sass` file and it'll be served at `/foo.css`. Use an npm-style `require` statement in your script, and jus will serve it up a browserified bundle. Write React's JSX syntax and it'll be transpiled to javascript on the fly. Write a GitHub-flavored `/markdown/file.md` and it'll be served as syntax-highlighted HTML at `/markdown/file`.
 
 When it's time to deploy, run `jus build` to compile your site down into plain old HTML, CSS, and Javascript files, ready to deployed to [GitHub Pages](#deployment-to-github-pages) or [Surge](#deployment-to-surge).
 
