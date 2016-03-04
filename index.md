@@ -27,12 +27,12 @@ If you like to learn by example, check out the repos of [sites using jus](#sites
 
 Pages are written in Markdown, HTML, Handlebars, or any combination thereof. At render time each page is passed a [Handlebars context object](#context) containing metadata about all the files in the directory.
 
-- Markdown parsing with [marky-markdown](npm.im/marky-markdown)
+- Markdown parsing with [marky-markdown](http://npm.im/marky-markdown), the battle-tested [commonmark](http://commonmark.org/)-compliant parser used by [npmjs.com](https://npmjs.com).
 - GitHub-flavored Markdown support, including [fenced code blocks](https://help.github.com/articles/creating-and-highlighting-code-blocks/)
+- Syntax Highlighting powered by [Atom](https://atom.io)'s [highlights](npm.im/highlights) package.
+- Markdown headings (`H1`, `H2`, etc) are automatically converted to anchored hyperlinks.
 - Emoji support. Converts :emoji:-style shortcuts to unicode emojis.
-- Syntax Highlighting with Atom.io's [highlights](npm.im/highlights)
-- Supports [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/), including [fenced code blocks](https://help.github.com/articles/github-flavored-markdown/#fenced-code-blocks)
-- Extracts [HTML Frontmatter](https://www.npmjs.com/package/html-frontmatter) as metadata
+- [HTML frontmatter](#frontmatter) as page metadata
 
 Extensions: `html|hbs|handlebars|markdown|md`
 
@@ -40,14 +40,12 @@ Extensions: `html|hbs|handlebars|markdown|md`
 
 All javascript files in your project are automatically [browserified](https://github.com/substack/browserify-handbook#readme) and [babelified](https://www.npmjs.com/package/babelify) using the `es2015` and `react` presets.
 
-You can use node-style `require` statements to include npm modules in your code:
+You can use node-style `require` statements to include node and npm modules in your code:
 
 ```js
-const jQuery = require('jquery')
+const url = require('url').parse('https://example.com')
 
-jQuery() => {
-  console.log(`welcome to ${location.hostname}`)
-}
+console.log(`the domain is ${url.host}`)
 ```
 
 You can also use [ES6-style imports](http://babeljs.io/docs/learn-es2015/#modules), if you prefer:
@@ -62,7 +60,7 @@ domready(() => {
 })
 ```
 
-Scripts are browserified using [`babel-preset-react`](https://babeljs.io/docs/plugins/preset-react/), which means you
+Scripts are browserified using [`babel-preset-react`](https://babeljs.io/docs/plugins/preset-react/), so you
 can write JSX in your scripts.
 
 Extensions: `js|jsx|es|es6`
@@ -99,22 +97,13 @@ into smaller arrays by type: an array for `pages`, another array for `scripts`, 
 
 When you request a page, the server renders the page on the fly, passing this object to the
 given page's template. This means every page has access to metadata about
-every file in the site at render time. You can use this to output to build a sitemap, for example:
-
-Pages always have the following properties:
-
-```js
-{
-  title: '',
-  href: ''
-}
-```
+every file in the site at render time.
 
 Using handlebars in your pages is entirely optional. If your pages don't need to do any dynamic rendering at build time, that's okay. The context will simply be ignored at render time.
 
 ## Frontmatter
 
-Much like Jekyll, jus supports [HTML frontmatter](https://github.com/zeke/html-frontmatter#readme). This allows you to add key-value metadata to your pages:
+jus supports [HTML frontmatter](https://github.com/zeke/html-frontmatter#readme). This allows you to add key-value metadata to your pages:
 
 ```html
 <!--
