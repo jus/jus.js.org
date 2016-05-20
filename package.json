@@ -4,7 +4,9 @@
   "description": "The website for jus, the delicous file server for nodey websites.",
   "main": "index.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "jus": "^0.20.0"
+  },
   "scripts": {
     "start": "jus serve",
     "dev": "jus serve",
