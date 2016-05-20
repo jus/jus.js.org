@@ -3,7 +3,7 @@ color-main-darker = #d65252
 color-text = #666
 color-link = #222
 
-logo-width = 260px
+logo-width = 300px
 nav-width = 30%
 column-max-width = 600px
 mobile-width = 600px
@@ -147,6 +147,7 @@ nav
   position relative
   @media screen and (max-width: mobile-width)
     width 100%
+    padding 30px
 
 #column
   position relative
@@ -155,11 +156,14 @@ nav
 
 #logo
   display inline-block
-  width logo-width
+  max-width logo-width
 
   img
     display block
     width 100%
+
+  @media screen and (max-width: mobile-width)
+    margin-top 40px
 
 table.routes
   width 100%
