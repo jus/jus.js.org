@@ -149,6 +149,7 @@ nav a.active {
 @media screen and (max-width: 600px) {
   #content {
     width: 100%;
+    padding: 30px;
   }
 }
 #column {
@@ -158,11 +159,16 @@ nav a.active {
 }
 #logo {
   display: inline-block;
-  width: 260px;
+  max-width: 300px;
 }
 #logo img {
   display: block;
   width: 100%;
+}
+@media screen and (max-width: 600px) {
+  #logo {
+    margin-top: 40px;
+  }
 }
 table.routes {
   width: 100%;
