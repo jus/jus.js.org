@@ -128,6 +128,74 @@ Handlebars templates can be used to wrap layouts around your pages.
 
 Extensions: `html|hbs|handlebars|markdown|md|mdown`
 
+### Helpers
+
+jus provides a number of helper functions you can use in your handlebars
+templates. All of the helpers are from [lobars](https://github.com/zeke/lobars),
+a collection of utility functions plucked directly from
+[lodash](https://lodash.com/).
+
+lobars includes **comparison helpers** like
+[endsWith](https://lodash.com/docs#endsWith),
+[eq](https://lodash.com/docs#eq),
+[gt](https://lodash.com/docs#gt),
+[gte](https://lodash.com/docs#gte),
+[includes](https://lodash.com/docs#includes),
+[isArray](https://lodash.com/docs#isArray),
+[isBoolean](https://lodash.com/docs#isBoolean),
+[isDate](https://lodash.com/docs#isDate),
+[isEmpty](https://lodash.com/docs#isEmpty),
+[isMatch](https://lodash.com/docs#isMatch),
+[isNumber](https://lodash.com/docs#isNumber),
+[isString](https://lodash.com/docs#isString),
+[isSymbol](https://lodash.com/docs#isSymbol),
+[isUndefined](https://lodash.com/docs#isUndefined),
+[lt](https://lodash.com/docs#lt),
+[lte](https://lodash.com/docs#lte),
+[startsWith](https://lodash.com/docs#startsWith) and more.
+
+Here's an example use of the `gte` (greater than or equal to) helper:
+
+```handlebars
+\{{#gte age 21}}
+  You are old enough to drink in the United States.
+\{{/gte}}
+```
+
+lobars also provides helpers for manipulating input like
+[camelCase](https://lodash.com/docs#camelCase),
+[capitalize](https://lodash.com/docs#capitalize),
+[escape](https://lodash.com/docs#escape),
+[kebabCase](https://lodash.com/docs#kebabCase),
+[lowerCase](https://lodash.com/docs#lowerCase),
+[lowerFirst](https://lodash.com/docs#lowerFirst),
+[pad](https://lodash.com/docs#pad),
+[padEnd](https://lodash.com/docs#padEnd),
+[padStart](https://lodash.com/docs#padStart),
+[parseInt](https://lodash.com/docs#parseInt),
+[repeat](https://lodash.com/docs#repeat),
+[replace](https://lodash.com/docs#replace),
+[snakeCase](https://lodash.com/docs#snakeCase),
+[split](https://lodash.com/docs#split),
+[startCase](https://lodash.com/docs#startCase),
+[template](https://lodash.com/docs#template),
+[toLower](https://lodash.com/docs#toLower),
+[toUpper](https://lodash.com/docs#toUpper),
+[trim](https://lodash.com/docs#trim),
+[trimEnd](https://lodash.com/docs#trimEnd),
+[trimStart](https://lodash.com/docs#trimStart),
+[truncate](https://lodash.com/docs#truncate),
+[unescape](https://lodash.com/docs#unescape),
+[upperCase](https://lodash.com/docs#upperCase),
+[upperFirst](https://lodash.com/docs#upperFirst),
+and more.
+
+Here's how you use the string helpers:
+
+```
+\{{lowerCase someString}}
+```
+
 ### Images
 
 Delicious metadata is extracted from images and included in the [Handlebars context object](#context), which is accessible to every page.
@@ -271,3 +339,8 @@ Sometimes real examples are the easiest way to learn. Check out these open-sourc
 - [jus.js.org](https://github.com/zeke/jus.js.org), the site you're looking at now.
 - [zeke.sikelianos.com](http://github.com/zeke/zeke.sikelianos.com), a personal portfolio site.
 - [acrophony](https://github.com/zeke/acrophony#readme), an experimental React GUI for acrophonic alphabets.
+
+
+Check out the jus source code on GitHub at [zeke/jus](https://github.com/zeke/jus).
+
+[![Build Status](https://travis-ci.org/zeke/jus.svg?branch=master)](https://travis-ci.org/zeke/jus)
