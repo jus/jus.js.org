@@ -20,6 +20,7 @@
       <a href="/#context">Context</a>
       <a href="/#frontmatter">Frontmatter</a>
       <a href="/#templates">Templates</a>
+      <a href="/#helpers">Helpers</a>
       <a href="/#images">Images</a>
       <a href="/#datafiles">Datafiles</a>
       <a href="/#clean-urls">Clean URLs</a>
@@ -105,6 +106,60 @@ every file in the site at render time.</p>
 <li>Pages can disable layout by setting <code>layout: false</code> in their frontmatter.</li>
 </ul>
 <p>Extensions: <code>html|hbs|handlebars|markdown|md|mdown</code></p>
+<h3 id="helpers" class="deep-link"><a href="#helpers">Helpers</a></h3>
+<p>jus provides a number of helper functions you can use in your handlebars
+templates. All of the helpers are from <a href="https://github.com/zeke/lobars">lobars</a>,
+a collection of utility functions plucked directly from
+<a href="https://lodash.com/">lodash</a>.</p>
+<p>lobars includes <strong>comparison helpers</strong> like
+<a href="https://lodash.com/docs#endsWith">endsWith</a>,
+<a href="https://lodash.com/docs#eq">eq</a>,
+<a href="https://lodash.com/docs#gt">gt</a>,
+<a href="https://lodash.com/docs#gte">gte</a>,
+<a href="https://lodash.com/docs#includes">includes</a>,
+<a href="https://lodash.com/docs#isArray">isArray</a>,
+<a href="https://lodash.com/docs#isBoolean">isBoolean</a>,
+<a href="https://lodash.com/docs#isDate">isDate</a>,
+<a href="https://lodash.com/docs#isEmpty">isEmpty</a>,
+<a href="https://lodash.com/docs#isMatch">isMatch</a>,
+<a href="https://lodash.com/docs#isNumber">isNumber</a>,
+<a href="https://lodash.com/docs#isString">isString</a>,
+<a href="https://lodash.com/docs#isSymbol">isSymbol</a>,
+<a href="https://lodash.com/docs#isUndefined">isUndefined</a>,
+<a href="https://lodash.com/docs#lt">lt</a>,
+<a href="https://lodash.com/docs#lte">lte</a>,
+<a href="https://lodash.com/docs#startsWith">startsWith</a> and more.</p>
+<p>Here&apos;s an example use of the <code>gte</code> (greater than or equal to) helper:</p>
+<pre><code class="highlight handlebars"><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>{{#gte&#xA0;age&#xA0;21}}</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;You&#xA0;are&#xA0;old&#xA0;enough&#xA0;to&#xA0;drink&#xA0;in&#xA0;the&#xA0;United&#xA0;States.</span></span></div><div class="line"><span class="text plain null-grammar"><span>{{/gte}}</span></span></div></pre></code></pre>
+<p>lobars also provides helpers for manipulating input like
+<a href="https://lodash.com/docs#camelCase">camelCase</a>,
+<a href="https://lodash.com/docs#capitalize">capitalize</a>,
+<a href="https://lodash.com/docs#escape">escape</a>,
+<a href="https://lodash.com/docs#kebabCase">kebabCase</a>,
+<a href="https://lodash.com/docs#lowerCase">lowerCase</a>,
+<a href="https://lodash.com/docs#lowerFirst">lowerFirst</a>,
+<a href="https://lodash.com/docs#pad">pad</a>,
+<a href="https://lodash.com/docs#padEnd">padEnd</a>,
+<a href="https://lodash.com/docs#padStart">padStart</a>,
+<a href="https://lodash.com/docs#parseInt">parseInt</a>,
+<a href="https://lodash.com/docs#repeat">repeat</a>,
+<a href="https://lodash.com/docs#replace">replace</a>,
+<a href="https://lodash.com/docs#snakeCase">snakeCase</a>,
+<a href="https://lodash.com/docs#split">split</a>,
+<a href="https://lodash.com/docs#startCase">startCase</a>,
+<a href="https://lodash.com/docs#template">template</a>,
+<a href="https://lodash.com/docs#toLower">toLower</a>,
+<a href="https://lodash.com/docs#toUpper">toUpper</a>,
+<a href="https://lodash.com/docs#trim">trim</a>,
+<a href="https://lodash.com/docs#trimEnd">trimEnd</a>,
+<a href="https://lodash.com/docs#trimStart">trimStart</a>,
+<a href="https://lodash.com/docs#truncate">truncate</a>,
+<a href="https://lodash.com/docs#unescape">unescape</a>,
+<a href="https://lodash.com/docs#upperCase">upperCase</a>,
+<a href="https://lodash.com/docs#upperFirst">upperFirst</a>,
+and more.</p>
+<p>Here&apos;s how you use the string helpers:</p>
+<pre><code><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>{{lowerCase&#xA0;someString}}</span></span></div></pre></code></pre>
 <h3 id="images" class="deep-link"><a href="#images">Images</a></h3>
 <p>Delicious metadata is extracted from images and included in the <a href="#context">Handlebars context object</a>, which is accessible to every page.</p>
 <ul>
@@ -197,6 +252,8 @@ Be aware of this when setting up your npm scripts.</p>
 <li><a href="http://github.com/zeke/zeke.sikelianos.com">zeke.sikelianos.com</a>, a personal portfolio site.</li>
 <li><a href="https://github.com/zeke/acrophony#readme">acrophony</a>, an experimental React GUI for acrophonic alphabets.</li>
 </ul>
+<p>Check out the jus source code on GitHub at <a href="https://github.com/zeke/jus">zeke/jus</a>.</p>
+<p class="badge-only"><a href="https://travis-ci.org/zeke/jus"><img src="https://travis-ci.org/zeke/jus.svg?branch=master" alt="Build Status" class="badge"></a></p>
 
       </div>
 
