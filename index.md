@@ -202,13 +202,14 @@ Add the following to your package.json:
 
 ```json
 {
+  "homepage": "http://example.com",
   "scripts": {
     "start": "jus serve",
     "deploy": "npm run build && npm run commit && npm run push && npm run open",
     "build": "jus build . dist",
     "commit": "git add dist && git commit -m 'update dist'",
     "push": "git subtree push --prefix dist origin gh-pages",
-    "open": "open http://zeke.sikelianos.com"
+    "open": "open $npm_package_homepage"
   }
 }
 ```
@@ -239,12 +240,13 @@ Add the following to your package.json:
 
 ```json
 {
+  "homepage": "http://example.com",
   "scripts": {
     "start": "jus serve",
     "deploy": "npm run build && npm run build && npm run open",
     "build": "jus build . dist",
-    "push": "surge dist YOUR-URL",
-    "open": "open YOUR-URL"
+    "push": "surge dist $npm_package_homepage",
+    "open": "open $npm_package_homepage"
   }
 }
 ```
