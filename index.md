@@ -121,7 +121,7 @@ Note: Jekyll uses YAML for frontmatter, but jus uses HTML, because it can be inc
 Handlebars templates can be used to wrap layouts around your pages.
 
 - If a file named `/layout.(html|hbs|handlebars|markdown|md)` is present, it will be applied to all pages by default.
-- Templates must include a `{{{body}}}` string, to be used as a placeholder for where the main content should be rendered.
+- Templates must include a <code>&lcub;&lcub;&lcub;body&rcub;&rcub;&rcub;</code> string, to be used as a placeholder for where the main content should be rendered.
 - Templates must have the word `layout` in their filename.
 - Pages can specify a custom layout in their [frontmatter](#frontmatter). Specifying `layout: foo` will refer to the `/layout-foo.(html|hbs|handlebars|markdown|md)` layout file.
 - Pages can disable layout by setting `layout: false` in their frontmatter.
@@ -270,13 +270,14 @@ Add the following to your package.json:
 
 ```json
 {
+  "homepage": "http://example.com",
   "scripts": {
     "start": "jus serve",
     "deploy": "npm run build && npm run commit && npm run push && npm run open",
     "build": "jus build . dist",
     "commit": "git add dist && git commit -m 'update dist'",
     "push": "git subtree push --prefix dist origin gh-pages",
-    "open": "open http://zeke.sikelianos.com"
+    "open": "open $npm_package_homepage"
   }
 }
 ```
@@ -307,12 +308,13 @@ Add the following to your package.json:
 
 ```json
 {
+  "homepage": "http://example.com",
   "scripts": {
     "start": "jus serve",
     "deploy": "npm run build && npm run build && npm run open",
     "build": "jus build . dist",
-    "push": "surge dist YOUR-URL",
-    "open": "open YOUR-URL"
+    "push": "surge dist $npm_package_homepage",
+    "open": "open $npm_package_homepage"
   }
 }
 ```
