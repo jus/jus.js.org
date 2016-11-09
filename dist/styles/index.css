@@ -96,7 +96,7 @@ nav {
   color: #fff;
   font-weight: 300;
   padding-top: 40px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 nav a {
   color: #fff;
