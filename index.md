@@ -38,7 +38,7 @@ Extensions: `html|hbs|handlebars|markdown|md`
 
 ## Scripts
 
-All javascript files in your project are automatically [browserified](https://github.com/substack/browserify-handbook#readme) and [babelified](https://www.npmjs.com/package/babelify) using the `es2015` and `react` presets.
+All javascript files\* in your project are automatically [browserified](https://github.com/substack/browserify-handbook#readme) and [babelified](https://www.npmjs.com/package/babelify) using the `es2015` and `react` presets.
 
 You can use node-style `require` statements to include node and npm modules in your code:
 
@@ -62,6 +62,8 @@ domready(() => {
 
 Scripts are browserified using [`babel-preset-react`](https://babeljs.io/docs/plugins/preset-react/), so you
 can write JSX in your scripts.
+
+\*Scripts ending in `.min.js` are assumed to be pre-processed artifacts and are not browserified.
 
 Extensions: `js|jsx|es|es6`
 
