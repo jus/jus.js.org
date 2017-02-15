@@ -16,7 +16,7 @@
     "push": "git subtree push --prefix dist origin gh-pages",
     "open": "open http://jus.js.org"
   },
-  "repository": "https://github.com/zeke/jus.js.org",
+  "repository": "https://github.com/jus/jus.js.org",
   "keywords": [
     "jus",
     "static",
@@ -27,7 +27,7 @@
   "author": "zeke",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zeke/jus.js.org/issues"
+    "url": "https://github.com/jus/jus.js.org/issues"
   },
-  "homepage": "https://github.com/zeke/jus.js.org#readme"
+  "homepage": "https://github.com/jus/jus.js.org#readme"
 }
