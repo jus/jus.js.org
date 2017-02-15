@@ -340,11 +340,11 @@ jus was inspired by a number of existing tools:
 
 Sometimes real examples are the easiest way to learn. Check out these open-source sites built with jus:
 
-- [jus.js.org](https://github.com/zeke/jus.js.org), the site you're looking at now.
+- [jus.js.org](https://github.com/jus/jus.js.org), the site you're looking at now.
 - [zeke.sikelianos.com](http://github.com/zeke/zeke.sikelianos.com), a personal portfolio site.
 - [acrophony](https://github.com/zeke/acrophony#readme), an experimental React GUI for acrophonic alphabets.
 
 
-Check out the jus source code on GitHub at [zeke/jus](https://github.com/zeke/jus).
+Check out the jus source code on GitHub at [jus/jus](https://github.com/jus/jus).
 
-[![Build Status](https://travis-ci.org/zeke/jus.svg?branch=master)](https://travis-ci.org/zeke/jus)
+[![Build Status](https://travis-ci.org/jus/jus.svg?branch=master)](https://travis-ci.org/jus/jus)
