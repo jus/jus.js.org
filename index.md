@@ -127,6 +127,9 @@ Handlebars templates can be used to wrap layouts around your pages.
 - Templates must have the word `layout` in their filename.
 - Pages can specify a custom layout in their [frontmatter](#frontmatter). Specifying `layout: foo` will refer to the `/layout-foo.(html|hbs|handlebars|markdown|md)` layout file.
 - Pages can disable layout by setting `layout: false` in their frontmatter.
+- Layouts themselves can specify a layout in frontmatter (nesting). To use the
+default layout as the parent of another layout, you must specify
+`layout: default` in the frontmatter.
 
 Extensions: `html|hbs|handlebars|markdown|md|mdown`
 
