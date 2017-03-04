@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "4"
+- '4'
 env:
   global:
   - CXX=g++-4.8
@@ -13,14 +13,14 @@ env:
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+    - ubuntu-toolchain-r-test
     packages:
-      - g++-4.8
+    - g++-4.8
 branches:
   except:
   - gh-pages
 before_install:
-- openssl aes-256-cbc -K $encrypted_e97310e8e355_key -iv $encrypted_e97310e8e355_iv
+- openssl aes-256-cbc -K $encrypted_d5e0c5c779f2_key -iv $encrypted_d5e0c5c779f2_iv
   -in id_rsa.enc -out id_rsa -d
 install:
 - npm install
