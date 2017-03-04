@@ -5,7 +5,9 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "jus": "^0.20.0"
+    "gh-pages-travis": "^1.0.4",
+    "jus": "^0.20.0",
+    "path-exists": "^3.0.0"
   },
   "scripts": {
     "start": "jus serve",
@@ -14,7 +16,8 @@
     "build": "rm -rf dist && jus build . dist",
     "commit": "git add dist && git commit -m 'update dist'",
     "push": "git subtree push --prefix dist origin gh-pages",
-    "open": "open http://jus.js.org"
+    "open": "open http://jus.js.org",
+    "gh-pages-travis": "gh-pages-travis"
   },
   "repository": "https://github.com/jus/jus.js.org",
   "keywords": [
