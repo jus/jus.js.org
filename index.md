@@ -346,6 +346,7 @@ Sometimes real examples are the easiest way to learn. Check out these open-sourc
 - [jus.js.org](https://github.com/jus/jus.js.org), the site you're looking at now.
 - [zeke.sikelianos.com](http://github.com/zeke/zeke.sikelianos.com), a personal portfolio site.
 - [acrophony](https://github.com/zeke/acrophony#readme), an experimental React GUI for acrophonic alphabets.
+- [SweetAlert](https://sweetalert.js.org), a popular open-source project for creating beautiful alerts
 
 
 Check out the jus source code on GitHub at [jus/jus](https://github.com/jus/jus).
