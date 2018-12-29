@@ -316,7 +316,7 @@ Add the following to your package.json:
   "homepage": "http://example.com",
   "scripts": {
     "start": "jus serve",
-    "deploy": "npm run build && npm run build && npm run open",
+    "deploy": "npm run build && npm run push && npm run open",
     "build": "jus build . dist",
     "push": "surge dist $npm_package_homepage",
     "open": "open $npm_package_homepage"
